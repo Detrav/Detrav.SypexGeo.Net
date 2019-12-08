@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Detrav.SypexGeo.Net", "Detrav.SypexGeo.Net\Detrav.SypexGeo.Net.csproj", "{B2B5CA80-18BE-4D67-B46D-7FC35EEB9FCF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Detrav.SypexGeo.Net.AspNet", "Detrav.SypexGeo.Net.AspNet\Detrav.SypexGeo.Net.AspNet.csproj", "{16261741-B6A0-41C4-91E4-F75D81BB4FE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Detrav.SypexGeo.Net.Tests", "Detrav.SypexGeo.Net.Tests\Detrav.SypexGeo.Net.Tests.csproj", "{64261285-8FC4-4DEB-BEDC-790A035BFD1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{2CAAF503-3649-4B20-87A6-7C727F07FCE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B5CA80-18BE-4D67-B46D-7FC35EEB9FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B5CA80-18BE-4D67-B46D-7FC35EEB9FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B5CA80-18BE-4D67-B46D-7FC35EEB9FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B5CA80-18BE-4D67-B46D-7FC35EEB9FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16261741-B6A0-41C4-91E4-F75D81BB4FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16261741-B6A0-41C4-91E4-F75D81BB4FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16261741-B6A0-41C4-91E4-F75D81BB4FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16261741-B6A0-41C4-91E4-F75D81BB4FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64261285-8FC4-4DEB-BEDC-790A035BFD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64261285-8FC4-4DEB-BEDC-790A035BFD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64261285-8FC4-4DEB-BEDC-790A035BFD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64261285-8FC4-4DEB-BEDC-790A035BFD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CAAF503-3649-4B20-87A6-7C727F07FCE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAAF503-3649-4B20-87A6-7C727F07FCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAAF503-3649-4B20-87A6-7C727F07FCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CAAF503-3649-4B20-87A6-7C727F07FCE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D8A018-7544-405E-BF5A-6E7EB6F1C4B3}
+	EndGlobalSection
+EndGlobal

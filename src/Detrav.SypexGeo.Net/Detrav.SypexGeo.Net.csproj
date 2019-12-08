@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.1;netcoreapp2.2;netstandard2.1</TargetFrameworks>
+    <PackageLicenseFile>LICENSE.MD</PackageLicenseFile>
+    <Description>Unofficial Sypex Geo for .Net Core and ASP.Net Core. The library for receiving information by ip address.</Description>
+    <Copyright>Detrav / Witaly Ezepchuk / Vitaliy Ezepchuk</Copyright>
+    <Authors>Detrav</Authors>
+    <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</PackageProjectUrl>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/5013291?s=180&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Detrav, IPAddress, Whois, Core</PackageTags>
+    <PackageReleaseNotes />
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../sign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\SxGeo.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\SxGeoCity.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\LICENSE.MD">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

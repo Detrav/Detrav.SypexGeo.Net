@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.1;netcoreapp2.2;netstandard2.1</TargetFrameworks>
+    <Version>1.0.1</Version>
+    <Authors>Detrav</Authors>
+    <PackageTags>Detrav, IPAddress, Whois, Core, AspNet</PackageTags>
+    <Description>Unofficial Sypex Geo for .Net Core and ASP.Net Core. The library for receiving information by ip address.</Description>
+    <Copyright>Detrav / Witaly Ezepchuk / Vitaliy Ezepchuk</Copyright>
+    <PackageLicenseFile>LICENSE.MD</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</PackageProjectUrl>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/5013291?s=180&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <AssemblyOriginatorKeyFile>../sign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Detrav.SypexGeo.Net\Detrav.SypexGeo.Net.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.MD">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
