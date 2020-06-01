@@ -13,7 +13,7 @@ namespace Detrav.SypexGeo.Net.Tests
             foreach (var file in SxGeoDownloader.SypexGeoDatabases)
             {
                 SxGeoDownloader downloader = new SxGeoDownloader(file, "./Resources/SxGeo_tmp.dat", true);
-                downloader.Download();
+                Assert.True(downloader.Download());
             }
             File.Delete("./Resources/SxGeo_tmp.dat");
         }

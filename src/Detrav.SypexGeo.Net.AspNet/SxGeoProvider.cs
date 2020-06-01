@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.IO;
 using System.Net;
 
@@ -30,6 +31,7 @@ namespace Detrav.SypexGeo.Net.AspNet
         #region Private Fields
 
         private readonly SxGeo sxGeo;
+        private readonly ILogger logger;
 
         #endregion Private Fields
 
@@ -41,14 +43,24 @@ namespace Detrav.SypexGeo.Net.AspNet
 
         #region Public Constructors
 
-        public SxGeoProvider(ICountryResolverOptions options)
+        public SxGeoProvider(ICountryResolverOptions options, ILogger<SxGeoProvider> logger)
         {
+            this.logger = logger;
             if (options.DownloadOnStart || !File.Exists(options.Path))
             {
                 SxGeoDownloader downloader = new SxGeoDownloader(options.URL, options.Path, true);
                 if (!downloader.Download())
                 {
-                    throw new FileNotFoundException("Can't download database!");
+                    // for strage case with certificate, use last database
+                    if(File.Exists(options.Path))
+                    {
+                        logger?.LogError(new FileNotFoundException("Can't download database!"), "[ALERT] Can't download database! For strage case with certificate, use last database!");
+                    }
+                    else
+                    {
+                        // if you get a throw check this line
+                        throw new FileNotFoundException("Can't download database!");
+                    }
                 }
             }
 

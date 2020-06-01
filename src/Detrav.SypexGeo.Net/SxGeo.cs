@@ -331,7 +331,7 @@ namespace Detrav.SypexGeo.Net
                     case 's': v = val.unpack('s'); break;
                     case 'S': v = val.unpack('S'); break;
                     case 'm':
-                        val = val.ToArray().Union(new[] {
+                        val = val.ToArray().Concat(new[] {
                           (val[2] >> 7) > 0 ? byte.MaxValue : byte.MinValue
                         }).ToArray().AsSpan();
                         v = val.unpack('l');
@@ -340,7 +340,7 @@ namespace Detrav.SypexGeo.Net
                     case 'M':
                         {
                             var arr = val.ToArray();
-                            arr = arr.Union(new[] { byte.MinValue }).ToArray();
+                            arr = arr.Concat(new[] { byte.MinValue }).ToArray();
                             val = arr.AsSpan();
 
                             v = val.unpack('L');

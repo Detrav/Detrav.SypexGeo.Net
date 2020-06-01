@@ -6,7 +6,7 @@
     <Description>Unofficial Sypex Geo for .Net Core and ASP.Net Core. The library for receiving information by ip address.</Description>
     <Copyright>Detrav / Witaly Ezepchuk / Vitaliy Ezepchuk</Copyright>
     <Authors>Detrav</Authors>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageProjectUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</PackageProjectUrl>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/5013291?s=180&amp;v=4</PackageIconUrl>
     <RepositoryUrl>https://github.com/Detrav/Detrav.SypexGeo.Net</RepositoryUrl>

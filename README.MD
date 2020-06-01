@@ -118,6 +118,13 @@ No live demo, see source: <https://github.com/Detrav/Detrav.SypexGeo.Net/tree/ma
 * This is not an official datasheet library for <https://sypexgeo.net>.
 * I accept pull requests, so feel free to make.
 
+## Changelog
+
+### 1.0.2
+
+- `[FIX]` An error when union was used instead of concat, so sometimes getting exception on data
+- `[UPD] ` Now, if the database could not be downloaded, an exception will not be thrown. And first, try to check the existence of the file. An error will be logged.
+
 ## License
 
 Copyright by Detrav / Witaly Ezepchuk / Vitaliy Ezepchuk.
