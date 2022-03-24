@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.IO;
+using System.Net;
 using Xunit;
 
 namespace Detrav.SypexGeo.Net.Tests
@@ -61,7 +62,25 @@ namespace Detrav.SypexGeo.Net.Tests
             //Assert.Equal("SxH", sxGeo.Header.Identifier);
         }
 
-      
+        [Fact]
+        public void ReadFromStream()
+        {
+            var stream = File.OpenRead("./Resources/SxGeoCity.dat");
+            SxGeo sxGeo = new SxGeo(stream);
+
+            Assert.Equal("RU", sxGeo.GetCountry(IPAddress.Parse("95.24.17.92")));
+            Assert.False(stream.CanRead);
+        }
+
+        [Fact]
+        public void ReadFromStreamAndLeaveOpen()
+        {
+            var stream = File.OpenRead("./Resources/SxGeoCity.dat");
+            SxGeo sxGeo = new SxGeo(stream, true);
+
+            Assert.Equal("RU", sxGeo.GetCountry(IPAddress.Parse("95.24.17.92")));
+            Assert.True(stream.CanRead);
+        }
 
         #endregion Public Methods
     }

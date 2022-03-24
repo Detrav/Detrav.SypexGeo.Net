@@ -11,7 +11,7 @@ namespace Detrav.SypexGeo.Net.Helpers
         private byte[] a32 = new byte[4];
         private byte[] a64 = new byte[8];
 
-        public BigEndianBinaryReader(Stream input) : base(input)
+        public BigEndianBinaryReader(Stream input, bool leaveOpen) : base(input, Encoding.UTF8, leaveOpen)
         {
 
         }

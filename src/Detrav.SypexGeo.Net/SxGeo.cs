@@ -65,11 +65,19 @@ namespace Detrav.SypexGeo.Net
         /// Initialize a new instance
         /// </summary>
         /// <param name="dbFile">path to the database file</param>
-        public SxGeo(string dbFile = "./Resources/SxGeo.dat")
+        public SxGeo(string dbFile = "./Resources/SxGeo.dat") 
+            : this(File.OpenRead(dbFile))
         {
-            using (Stream fh = File.OpenRead(dbFile))
+        }
 
-            using (BinaryReader reader = new BigEndianBinaryReader(fh))
+        /// <summary>
+        /// Initialize a new instance
+        /// </summary>
+        /// <param name="dbStream">the stream to read</param>
+        /// <param name="leaveOpen">to leave the stream open after the SxGeo is created; otherwise, false</param>
+        public SxGeo(Stream dbStream, bool leaveOpen = false) 
+        {
+            using (BinaryReader reader = new BigEndianBinaryReader(dbStream, leaveOpen))
             {
                 var header = reader.ReadBytes(40);
 
@@ -116,14 +124,14 @@ namespace Detrav.SypexGeo.Net
                 int pack_size = Convert.ToInt32(info["pack_size"]);
 
                 if ((b_idx_len * m_idx_len * range * db_items * time * id_len) == 0)
-                    throw new FormatException("Wrong file format " + dbFile);
+                    throw new FormatException("Wrong database format.");
 
                 if (pack_size > 0)
                     this.pack = reader.ReadBytes(pack_size).Split(byte.MinValue);
                 this.b_idx_str = reader.ReadBytes(b_idx_len * 4);
                 this.m_idx_str = reader.ReadBytes(m_idx_len * 4);
 
-                this.db_begin = fh.Position;
+                this.db_begin = dbStream.Position;
 
                 this.db = reader.ReadBytes((int)(db_items * block_len));
                 if (info.ContainsKey("region_size"))
